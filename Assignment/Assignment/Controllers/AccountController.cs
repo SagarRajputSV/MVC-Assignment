@@ -28,8 +28,7 @@ namespace Assignment.Controllers
         {
             CrudObj.AddUser(user);
             ModelState.Clear();
-            Response.Write("Account Succesfully Added");
-
+            
             return View();
         }
 

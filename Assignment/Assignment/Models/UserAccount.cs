@@ -74,12 +74,13 @@ namespace Assignment.Models
                 return user;
             }
         }
+
         public void AddUser(UserAccount user)
         {
             con = new SqlConnection(str);
             con.Open();
             cmd = new SqlCommand();
-            cmd.CommandText = "SSpInsertAll";
+            cmd.CommandText = "SSpInsertAll"; 
             cmd.Connection = con;
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -88,7 +89,7 @@ namespace Assignment.Models
             cmd.Parameters.AddWithValue("@EmailId", user.EmailId);
             cmd.Parameters.AddWithValue("@UserName", user.UserName);
             cmd.Parameters.AddWithValue("@Password", user.Password);
-            cmd.ExecuteNonQuery();
+            int result= cmd.ExecuteNonQuery();
 
             con.Close();
         }

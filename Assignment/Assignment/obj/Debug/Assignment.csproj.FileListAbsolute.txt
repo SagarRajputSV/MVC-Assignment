@@ -145,8 +145,8 @@ C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\bi
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\bin\Newtonsoft.Json.xml
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\bin\Antlr3.Runtime.pdb
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\obj\Debug\Assignment.csproj.CoreCompileInputs.cache
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\obj\Debug\Assignment.csproj.CopyComplete
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\obj\Debug\Assignment.dll
 C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\obj\Debug\Assignment.pdb
+C:\Users\training\Desktop\MVC Assignment\MVC-Assignment\Assignment\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
