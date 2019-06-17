@@ -24,7 +24,7 @@ namespace Assignment.Models
         [EmailAddress(ErrorMessage ="Please Enter a Valid Email-Id")]
         public string EmailId { get; set; }
 
-        [Required(ErrorMessage ="Please Enter a Valid UserName")]
+        [Required(ErrorMessage ="Please Enter UserName")]
         public string UserName { get; set; }
 
         [Required (ErrorMessage ="Enter Password")]
@@ -42,7 +42,8 @@ namespace Assignment.Models
         SqlConnection con;
         SqlCommand cmd;
 
-        public IEnumerable<UserAccount> GetUserInfo
+        public IEnumerable<UserAccount> GetUserInfoForLogin
+
         {
             get
             {
@@ -91,4 +92,5 @@ namespace Assignment.Models
 
             con.Close();
         }
+    }
 }

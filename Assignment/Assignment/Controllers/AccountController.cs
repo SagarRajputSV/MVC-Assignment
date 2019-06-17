@@ -43,9 +43,8 @@ namespace Assignment.Controllers
         {
             if(ModelState.IsValid)
             {
-                var usr = CrudObj.GetUserInfo.Single(usr => usr.UserName == user.UserName && usr.Password == user.Password);
+                var usrr = CrudObj.GetUserInfoForLogin.Single(usr => usr.UserName == user.UserName && usr.Password == user.Password);
                 Response.Write("Login Succesful");
-
             }
 
             else
