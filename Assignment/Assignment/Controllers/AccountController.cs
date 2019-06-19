@@ -26,8 +26,25 @@ namespace Assignment.Controllers
         [HttpPost]
         public ActionResult Register(UserAccount user)
         {
-            CrudObj.AddUser(user);
+            string result=CrudObj.AddUser(user);
             ModelState.Clear();
+
+            Response.Write(result);
+
+            if(result.Equals("1"))
+            {                
+                Response.Write("User Added Successfully");
+            }
+
+            else if(result.Equals("-1"))
+            {
+                Response.Write("User With Similar Username Exists");
+            }
+
+            else
+            {
+                Response.Write("User With Similar EmailId Exists");
+            }
             
             return View();
         }

@@ -75,7 +75,7 @@ namespace Assignment.Models
             }
         }
 
-        public void AddUser(UserAccount user)
+        public string AddUser(UserAccount user)
         {
             con = new SqlConnection(str);
             con.Open();
@@ -89,9 +89,20 @@ namespace Assignment.Models
             cmd.Parameters.AddWithValue("@EmailId", user.EmailId);
             cmd.Parameters.AddWithValue("@UserName", user.UserName);
             cmd.Parameters.AddWithValue("@Password", user.Password);
-            int result= cmd.ExecuteNonQuery();
 
+            SqlParameter outputparameter = new SqlParameter();
+            outputparameter.ParameterName = "@ret";
+            outputparameter.SqlDbType = SqlDbType.Int;
+            outputparameter.Direction = ParameterDirection.Output;
+
+            cmd.Parameters.Add(outputparameter);
+
+            cmd.ExecuteNonQuery();
             con.Close();
+
+            string result = outputparameter.Value.ToString();
+
+            return result ;
         }
     }
 }
