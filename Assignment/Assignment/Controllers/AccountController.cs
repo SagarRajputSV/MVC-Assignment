@@ -55,21 +55,50 @@ namespace Assignment.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(UserAccount user)
+        public ActionResult Login(UserAccount ur)
         {
-            if(ModelState.IsValid)
+            
+                try
+                {
+                    UserAccount usrr = CrudObj.GetUserInfoForLogin.Single(usr => usr.UserName == ur.UserName.ToString() && usr.Password == ur.Password.ToString());
+
+                    if (usrr != null)
+                    {
+                        Session["FirstName"] = usrr.UserName.ToString();
+                        return RedirectToAction("LoggedIn");
+                    }
+                }
+
+                catch (Exception er)
+                {
+                    if(er.Message.ToString() == "Sequence contains no matching element")
+                      {
+                    Response.Write("The username and the password not found");
+                      }
+
+                    else
+                {
+                    Response.Write(er.Message);
+                }
+                }
+            
+
+            return View();
+                 
+        }
+
+        public ActionResult LoggedIn()
+        {
+            if(Session["FirstName"]!=null)
             {
-                var usrr = CrudObj.GetUserInfoForLogin.Single(usr => usr.UserName == user.UserName && usr.Password == user.Password);
-                Response.Write("Login Succesful");
+                return View();
             }
 
             else
             {
-                ModelState.AddModelError("", "UserName and Password MisMatch");
+                return RedirectToAction("Login");
             }
-
-            return View();
-                 
+            
         }
     }
 }
